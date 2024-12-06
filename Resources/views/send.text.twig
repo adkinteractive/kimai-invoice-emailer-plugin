@@ -1,0 +1,14 @@
+Hello {{ customer.company ?? customer.name ?? 'there' }},
+
+Your invoice summary is below.
+
+Invoice ID: {{ invoice.invoiceNumber }}
+Issue date: {{ invoice.createdAt|date('m/d/Y') }}
+Amount: {{ invoice.total }} {{ invoice.currency }}
+Due: {{ invoice.dueDate|date('m/d/Y') }} (Net {{ invoice.dueDays }})
+
+Thanks,
+{% if user %}
+{{ user.displayName }}
+{% endif %}
+{{ company.name }}

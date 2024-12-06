@@ -1,0 +1,34 @@
+{
+    "name": "adkinteractive/invoice-emailer-plugin",
+    "type": "kimai-plugin",
+    "version": "1.0.0",
+    "description": "Send invoices and payment reminders to customers via email",
+    "homepage": "https://github.com/adkinteractive/kimai-invoice-emailer-plugin",
+    "keywords": [
+        "kimai",
+        "kimai-plugin"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nick Penree",
+            "homepage": "https://www.adkinteractive.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "kimai/kimai2": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "KimaiPlugin\\InvoiceEmailerBundle\\": ""
+        }
+    },
+    "extra": {
+        "installer-name": "InvoiceEmailerBundle",
+        "kimai": {
+            "require": 21700,
+            "name": "Invoice Emailer"
+        }
+    }
+}
