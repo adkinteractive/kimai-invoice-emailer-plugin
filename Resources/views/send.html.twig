@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="light dark">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .logo {
+            margin-bottom: 30px;
+        }
+        .container {
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .greeting {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .summary {
+            margin-bottom: 20px;
+        }
+        .details {
+            background-color: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .detail-row {
+            margin: 12px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .label {
+            color: #666666;
+            font-weight: 500;
+        }
+        .value {
+            font-weight: 600;
+        }
+        .signature {
+            margin-top: 25px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        @media (prefers-color-scheme: dark) {
+            .dark-mode-logo {
+                filter: invert(1) !important;
+            }
+        }
+        [data-ogsc] .dark-mode-logo {
+            filter: invert(1) !important;
+        }
+    </style>
+</head>
+<body>
+    {% if company.logo %}
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="{{ company.logo }}" alt="{{ company.name }}" style="max-width: 100%; height: auto;" class="dark-mode-logo">
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="greeting">
+            Hello {{ customer.company ?? customer.name ?? 'there' }},
+        </div>
+
+        <div class="summary">
+            Your invoice summary is below.
+        </div>
+
+        <div class="details">
+            <div class="detail-row">
+                <span class="label">Invoice ID:</span>
+                <span class="value">{{ invoice.invoiceNumber }}</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Issue date:</span>
+                <span class="value">{{ invoice.createdAt|date('m/d/Y') }}</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Amount:</span>
+                <span class="value">${{ invoice.total|number_format(2, '.', ',') }} {{ invoice.currency }}</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Due date:</span>
+                <span class="value">{{ invoice.dueDate|date('m/d/Y') }} (Net {{ invoice.dueDays }})</span>
+            </div>
+        </div>
+
+        <div class="signature">
+            Thanks,<br>
+            {% if user %}
+                {{ user.displayName }}<br>
+            {% endif %}
+            {{ company.name }}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="system-configuration.en.xlf">
+    <body>
+      <trans-unit id="eEQRXtz" resname="invoice.emailer_send">
+        <source>invoice.emailer_send</source>
+        <target>Email invoice</target>
+      </trans-unit>
+      <trans-unit id="eEQRXt9" resname="invoice.emailer_resend">
+        <source>invoice.emailer_resend</source>
+        <target>Resend invoice</target>
+      </trans-unit>
+      <trans-unit id="eEQ1Xtz" resname="invoice.emailer_sent">
+        <source>invoice.emailer_sent</source>
+        <target>Email was sent</target>
+      </trans-unit>
+      <trans-unit id="eEQRXXz" resname="invoice.emailer.subject">
+        <source>invoice.emailer.subject</source>
+        <target>Invoice #{number} from {company}</target>
+      </trans-unit>
+      <trans-unit id="eEQRXt2" resname="invoice.emailer.greeting">
+        <source>invoice.emailer.greeting</source>
+        <target>Dear Customer,</target>
+      </trans-unit>
+      <trans-unit id="eEQRXt3" resname="invoice.emailer.body">
+        <source>invoice.emailer.body</source>
+        <target>Please find attached your invoice.</target>
+      </trans-unit>
+      <trans-unit id="9EQRXt3" resname="invoice.emailer.trigger_status">
+        <source>invoice.emailer.trigger_status</source>
+        <target>Send email when invoice status is</target>
+      </trans-unit>
+      <trans-unit id="9EzRXt3" resname="invoice.emailer.post_email_status">
+        <source>invoice.emailer.post_email_status</source>
+        <target>Change invoice status after email to</target>
+      </trans-unit>
+      <trans-unit id="1EzRX13" resname="invoice.emailer.do_not_change">
+        <source>invoice.emailer.do_not_change</source>
+        <target>Do not change automatically</target>
+      </trans-unit>
+      <trans-unit id="cEzZXt2" resname="invoice.emailer.do_not_send">
+        <source>invoice.emailer.do_not_send</source>
+        <target>Do not send automatically</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
